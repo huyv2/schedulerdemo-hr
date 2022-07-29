@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Schedule</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <listener>
+  	<listener-class>hr.init.ContextListenerInit</listener-class>
+  </listener>
+  
+  <servlet>
+    <servlet-name>SettingJob</servlet-name>
+    <servlet-class>hr.function.ScheduleSettingFunction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SettingJob</servlet-name>
+    <url-pattern>/setting</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>LoadingJob</servlet-name>
+    <servlet-class>hr.function.LoadingInstanceJobFunction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoadingJob</servlet-name>
+    <url-pattern>/loading</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>CacheResetting</servlet-name>
+    <servlet-class>hr.function.CacheResettingFunction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CacheResetting</servlet-name>
+    <url-pattern>/resetting</url-pattern>
+  </servlet-mapping>
+</web-app>
